@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.postgresql.util.PSQLException;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -112,7 +113,32 @@ public class ControladorPersona {
         vistaP.getBtn_modificar().addActionListener(l->{
             try {
                 Modificar();
+                vistaP.getTxt_nombre().setText("");
+                vistaP.getTxt_apellido().setText("");
+                vistaP.getTxt_cédula().setText("");
+                
             } catch (SQLException ex) {
+                Logger.getLogger(ControladorPersona.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        
+        vistaP.getBtn_mostrar().addActionListener(l-> {
+            try {
+                mostrar();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPersona.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        
+        vistaP.getBtn_eliminar().addActionListener(l->{
+            try {
+                Eliminar();
+                JOptionPane.showMessageDialog(null,"SE HA ELIMINADO CORRECTAMENTE AL USUARIO");
+                vistaP.getTxt_nombre().setText("");
+                vistaP.getTxt_apellido().setText("");
+                vistaP.getTxt_cédula().setText("");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null,"HA OCURRIDO UN ERROR AL MOMENTO DE ELIMINAR");
                 Logger.getLogger(ControladorPersona.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
@@ -188,7 +214,24 @@ public class ControladorPersona {
     }
     
     public void Modificar() throws SQLException{
-        
         modeloP.Modificar(vistaP.getTxt_nombre().getText(), vistaP.getTxt_apellido().getText(), vistaP.getTxt_cédula().getText());
+    }
+    
+    public void mostrar() throws SQLException{
+        DefaultTableModel mTabla;
+        mTabla = (DefaultTableModel) vistaP.getTbalaPersonas().getModel();
+        mTabla.setNumRows(0);
+        ArrayList<ModeloPersona>  listapersonas = modeloP.Listar();
+        // Uso de una expresion landa
+
+        listapersonas.stream().forEach(cam -> {
+            String[] filaNueva = {cam.getCedula(), cam.getNombre(), cam.getApellidoi(),String.valueOf(ObtenerEdad(cam.getFechanacimiento()))};
+            mTabla.addRow(filaNueva);
+        });
+    }
+    
+    public void Eliminar() throws SQLException{
+        int seleccionado = vistaP.getTbalaPersonas().getSelectedRow();
+        modeloP.Delete(vistaP.getTbalaPersonas().getValueAt(seleccionado,0).toString());
     }
 }

@@ -8,6 +8,7 @@ package Modelo;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -44,5 +45,25 @@ public class ModeloPersona extends persona{
         String modificar = "UPDATE dolar SET nombre = '"+nombre+"', apellido = '"+apellido+"' "
                 + "WHERE cedula = '"+cedula+"'";
         conexion.accion(modificar);
+    }
+    
+    public ArrayList<ModeloPersona> Listar() throws SQLException{
+        String Select = "SELECT * FROM dolar";
+        ResultSet parseo = conexion.Consulta(Select);
+        ArrayList<ModeloPersona> contenedor = new ArrayList();
+        while(parseo.next()){
+            ModeloPersona ingreso = new ModeloPersona();
+            ingreso.setNombre(parseo.getString("nombre"));
+            ingreso.setApellidoi(parseo.getString("apellido"));
+            ingreso.setCedula(parseo.getString("cedula"));
+            ingreso.setFechanacimiento(parseo.getDate("fechanacimiento"));
+            contenedor.add(ingreso);
+        }
+        return contenedor;
+    }
+    
+    public void Delete(String cedula) throws SQLException{
+        String delete = "DELETE FROM dolar WHERE cedula = '"+cedula+"'";
+        conexion.accion(delete);
     }
 }

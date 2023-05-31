@@ -48,6 +48,7 @@ public class Persona extends javax.swing.JInternalFrame {
         txt_apellido = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         fecha_nacimiento = new com.toedter.calendar.JDateChooser();
+        btn_mostrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -90,6 +91,8 @@ public class Persona extends javax.swing.JInternalFrame {
 
         fecha_nacimiento.setDateFormatString("yyyy/MM/dd");
 
+        btn_mostrar.setText("MOSTRAR");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,11 +120,13 @@ public class Persona extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(fecha_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
+                        .addGap(41, 41, 41)
+                        .addComponent(btn_mostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
                         .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -138,7 +143,8 @@ public class Persona extends javax.swing.JInternalFrame {
                     .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_buscar)
                     .addComponent(btn_modificar)
-                    .addComponent(btn_eliminar))
+                    .addComponent(btn_eliminar)
+                    .addComponent(btn_mostrar))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(60, 60, 60)
@@ -160,7 +166,7 @@ public class Persona extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(btn_ingresar)
                 .addGap(18, 18, 18))
         );
@@ -247,6 +253,9 @@ public class Persona extends javax.swing.JInternalFrame {
         this.TbalaPersonas = TbalaPersonas;
     }
 
+    public JButton getBtn_mostrar() {
+        return btn_mostrar;
+    }
     
     /**
      * @param args the command line arguments
@@ -262,6 +271,7 @@ public class Persona extends javax.swing.JInternalFrame {
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_ingresar;
     private javax.swing.JButton btn_modificar;
+    private javax.swing.JButton btn_mostrar;
     private com.toedter.calendar.JDateChooser fecha_nacimiento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
