@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import LIB.FSButtonMD;
 import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
@@ -49,6 +50,10 @@ public class Persona extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         fecha_nacimiento = new com.toedter.calendar.JDateChooser();
         btn_mostrar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        Jlabl_salir = new javax.swing.JLabel();
+        btn_mostrar_reporte = new LIB.FSButtonMD();
+        btn_mostrar_estylo = new LIB.FSButtonMD();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -57,9 +62,12 @@ public class Persona extends javax.swing.JInternalFrame {
         btn_buscar.setText("BUSCAR");
 
         btn_modificar.setText("MODIFICAR");
+        btn_modificar.setToolTipText("MODIFICACION DE PRODUCTO");
 
         btn_eliminar.setText("ELIMINAR");
 
+        TbalaPersonas.setBackground(new java.awt.Color(235, 146, 146));
+        TbalaPersonas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         TbalaPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -79,6 +87,7 @@ public class Persona extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
+        TbalaPersonas.setSelectionBackground(new java.awt.Color(255, 0, 85));
         jScrollPane1.setViewportView(TbalaPersonas);
 
         jLabel1.setText("CÉDULA");
@@ -92,6 +101,21 @@ public class Persona extends javax.swing.JInternalFrame {
         fecha_nacimiento.setDateFormatString("yyyy/MM/dd");
 
         btn_mostrar.setText("MOSTRAR");
+
+        jLabel5.setBackground(new java.awt.Color(255, 236, 146));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("CRUD PERSONAS");
+        jLabel5.setOpaque(true);
+
+        Jlabl_salir.setBackground(new java.awt.Color(255, 236, 146));
+        Jlabl_salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Jlabl_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/ICONOS/cross.png"))); // NOI18N
+        Jlabl_salir.setOpaque(true);
+
+        btn_mostrar_reporte.setText("GENERAR REPORTES");
+
+        btn_mostrar_estylo.setText("REPORTE CON ESTYLOS");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,12 +157,23 @@ public class Persona extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(123, 123, 123)
                 .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_mostrar_estylo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(btn_mostrar_reporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(Jlabl_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Jlabl_salir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_buscar)
@@ -166,9 +201,16 @@ public class Persona extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(btn_ingresar)
-                .addGap(18, 18, 18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btn_ingresar)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_mostrar_reporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_mostrar_estylo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27))))
         );
 
         pack();
@@ -256,6 +298,14 @@ public class Persona extends javax.swing.JInternalFrame {
     public JButton getBtn_mostrar() {
         return btn_mostrar;
     }
+
+    public FSButtonMD getBtn_mostrar_estylo() {
+        return btn_mostrar_estylo;
+    }
+
+    public void setBtn_mostrar_estylo(FSButtonMD btn_mostrar_estylo) {
+        this.btn_mostrar_estylo = btn_mostrar_estylo;
+    }
     
     /**
      * @param args the command line arguments
@@ -264,19 +314,31 @@ public class Persona extends javax.swing.JInternalFrame {
         this.txt_nombre = txt_nombre;
     }
 
+    public FSButtonMD getBtn_mostrar_reporte() {
+        return btn_mostrar_reporte;
+    }
+
+    public void setBtn_mostrar_reporte(FSButtonMD btn_mostrar_reporte) {
+        this.btn_mostrar_reporte = btn_mostrar_reporte;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Jlabl_salir;
     private javax.swing.JTable TbalaPersonas;
     private javax.swing.JButton btn_buscar;
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_ingresar;
     private javax.swing.JButton btn_modificar;
     private javax.swing.JButton btn_mostrar;
+    private LIB.FSButtonMD btn_mostrar_estylo;
+    private LIB.FSButtonMD btn_mostrar_reporte;
     private com.toedter.calendar.JDateChooser fecha_nacimiento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txt_apellido;
     private javax.swing.JTextField txt_buscar;

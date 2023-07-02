@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -64,6 +66,20 @@ public class ConeexionBD{
     }
        
     public Connection Ingres(){
+        return con;
+    }
+    
+    public  Connection conectar() {
+        
+        try {
+            Class.forName("org.postgresql.Driver");
+            con = (Connection) DriverManager.getConnection(url, user, password);
+        } catch (Exception e) {
+            Toolkit.getDefaultToolkit().beep();
+            JOptionPane.showMessageDialog(null, "¡No se pudo conectar a la base de datos!", "Error de conexión", JOptionPane.ERROR_MESSAGE);
+        }
+    
+
         return con;
     }
 }

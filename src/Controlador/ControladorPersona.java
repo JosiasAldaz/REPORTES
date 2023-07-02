@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.ConeexionBD;
 import Modelo.ModeloPersona;
 import Vista.Persona;
 import java.sql.SQLException;
@@ -20,6 +21,15 @@ import org.postgresql.util.PSQLException;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -142,6 +152,10 @@ public class ControladorPersona {
                 Logger.getLogger(ControladorPersona.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+        
+        vistaP.getBtn_mostrar_reporte().addActionListener(l-> printReport());
+        
+        vistaP.getBtn_mostrar_estylo().addActionListener(l->printReportStylos());
     }
     
     
@@ -234,4 +248,36 @@ public class ControladorPersona {
         int seleccionado = vistaP.getTbalaPersonas().getSelectedRow();
         modeloP.Delete(vistaP.getTbalaPersonas().getValueAt(seleccionado,0).toString());
     }
+    
+    public void printReport() {
+    try {
+        ConeexionBD conmsql=new ConeexionBD();
+        JasperReport jr =(JasperReport)JRLoader.loadObject(getClass().getResource("/Reportes/Personas.jasper"));
+        System.out.println(conmsql.conectar());
+        JasperPrint print = JasperFillManager.fillReport(jr, new HashMap<>(),conmsql.conectar());
+        JasperViewer pv=new JasperViewer(print,false);
+        pv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        pv.setVisible(true);
+    } catch (JRException e) {
+        e.printStackTrace();
+    }
+}
+    
+    public void printReportStylos(){
+        try {
+        ConeexionBD conmsql=new ConeexionBD();
+        JasperReport jr =(JasperReport)JRLoader.loadObject(getClass().getResource("/Reportes/Reporte_facturas.jasper"));
+        System.out.println(conmsql.conectar());
+        Map<String, Object> map = new HashMap<>();
+        String id = JOptionPane.showInputDialog(null, "Ingrese el ID de la factura que desea generar");
+        map.put("ID_enc", Integer.parseInt(id));
+        JasperPrint print = JasperFillManager.fillReport(jr, map,conmsql.conectar());
+        JasperViewer pv=new JasperViewer(print,false);
+        pv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        pv.setVisible(true);
+    } catch (JRException e) {
+        e.printStackTrace();
+    }
+    }
+    
 }

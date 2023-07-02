@@ -64,7 +64,22 @@ public class MenúPrincipal extends javax.swing.JFrame {
         this.Btn_clientes = Btn_clientes;
     }
 
-    
+    public JButton getBtn_productos() {
+        return Btn_productos;
+    }
+
+    public void setBtn_productos(JButton Btn_productos) {
+        this.Btn_productos = Btn_productos;
+    }
+
+    public JButton getBtn_factura() {
+        return Btn_factura;
+    }
+
+    public void setBtn_factura(JButton Btn_factura) {
+        this.Btn_factura = Btn_factura;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -81,7 +96,9 @@ public class MenúPrincipal extends javax.swing.JFrame {
         toolbar_cliente = new javax.swing.JToolBar();
         Btn_clientes = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
-        jButton2 = new javax.swing.JButton();
+        Btn_productos = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
+        Btn_factura = new javax.swing.JButton();
         barra_estado = new javax.swing.JLabel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         progreso_cliente = new javax.swing.JProgressBar();
@@ -116,18 +133,27 @@ public class MenúPrincipal extends javax.swing.JFrame {
         toolbar_cliente.add(Btn_clientes);
         toolbar_cliente.add(jSeparator1);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/ICONOS/perfil.png"))); // NOI18N
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Btn_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/ICONOS/product.png"))); // NOI18N
+        Btn_productos.setFocusable(false);
+        Btn_productos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Btn_productos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Btn_productos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Btn_productosActionPerformed(evt);
             }
         });
-        toolbar_cliente.add(jButton2);
+        toolbar_cliente.add(Btn_productos);
+        toolbar_cliente.add(jSeparator2);
+
+        Btn_factura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/ICONOS/factura.png"))); // NOI18N
+        Btn_factura.setFocusable(false);
+        Btn_factura.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Btn_factura.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        toolbar_cliente.add(Btn_factura);
 
         barra_estado.setText("TIENDA 1.0");
+
+        jDesktopPane1.setBackground(new java.awt.Color(171, 218, 201));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -173,12 +199,15 @@ public class MenúPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolbar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(barra_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(progreso_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE))
             .addComponent(jDesktopPane1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(toolbar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,9 +228,9 @@ public class MenúPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_clientesActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Btn_productosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_productosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_Btn_productosActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
@@ -210,8 +239,9 @@ public class MenúPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_clientes;
+    private javax.swing.JButton Btn_factura;
+    private javax.swing.JButton Btn_productos;
     private javax.swing.JLabel barra_estado;
-    private javax.swing.JButton jButton2;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -226,6 +256,7 @@ public class MenúPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JProgressBar progreso_cliente;
     private javax.swing.JToolBar toolbar_cliente;
     // End of variables declaration//GEN-END:variables

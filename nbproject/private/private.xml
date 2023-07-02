@@ -3,10 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Modelo/ModeloPersona.java</file>
-            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Vista/Persona.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Vista/MenúPrincipal.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Vista/ICONOS/paquete.png</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Vista/Producto.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Vista/ICONOS/perfil.png</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Controlador/ControladorFactura.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Modelo/Modelo_Detalle_Factura.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Vista/ICONOS/cross.png</file>
             <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Controlador/ControladorPersona.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Controlador/Botones.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Controlador/Inicio.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Vista/ICONOS/bin.png</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Modelo/Enc_Factura.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Modelo/ModeloProducto.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Modelo/ModeloPersona.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Vista/Factura.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Vista/Persona.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Modelo/Detalle_Factura.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Controlador/ControladorProducto.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Modelo/ModeloEnc_Factura.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Controlador/validaciones.java</file>
             <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Modelo/ConeexionBD.java</file>
+            <file>file:/C:/Users/L%20E%20N%20O%20V%20O/OneDrive/Documents/NetBeansProjects/personaMVC/src/Controlador/ControladorMenuprincipal.java</file>
         </group>
     </open-files>
 </project-private>
